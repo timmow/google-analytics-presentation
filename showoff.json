@@ -1,0 +1,10 @@
+{ "name": "Google analytics", "sections": [ 
+	{"section":"intro"},
+	{"section":"events"},
+	{"section":"social"},
+	{"section":"segments"},
+	{"section":"customvars"},
+	{"section":"tldl"},
+	{"section":"sitesearch"},
+	{"section":"debugging"}
+ 	]}
