@@ -1,0 +1,255 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Google analytics</title>
+
+  <meta name="viewport" content="width=device-width"/>
+
+  <link rel="stylesheet" href="./css/reset.css" type="text/css"/>
+  <link rel="stylesheet" href="./css/showoff.css" type="text/css"/>
+
+  <script type="text/javascript" src="./js/jquery-1.4.2.min.js"></script>
+  <script type="text/javascript" src="./js/jquery.cycle.all.js"></script>
+	<script type="text/javascript" src="./js/jquery-print.js"></script>
+  <script type="text/javascript" src="./js/jquery.batchImageLoad.js"></script>
+
+  <script type="text/javascript" src="./js/jquery.doubletap-0.1.js"></script>
+
+  <script type="text/javascript" src="./js/fg.menu.js"></script>
+  <script type="text/javascript" src="./js/showoff.js"></script>
+  <script type="text/javascript" src="./js/jTypeWriter.js"> </script>
+  <script type="text/javascript" src="./js/sh_main.min.js"></script>
+  <script type="text/javascript" src="./js/core.js"></script>
+  <script type="text/javascript" src="./js/showoffcore.js"></script>
+  <script type="text/javascript" src="./js/coffee-script.js"></script>
+
+  <link type="text/css" href="./css/fg.menu.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/theme/ui.all.css" media="screen" rel="stylesheet" />
+  <link type="text/css" href="./css/sh_style.css" rel="stylesheet" >
+
+  
+
+  
+
+  <script type="text/javascript">
+  $(function(){
+      setupPreso(false, './');
+  });
+  </script>
+
+</head>
+
+<body>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="navmenu"><span class="ui-icon ui-icon-triangle-1-s"></span>slides</a>
+<div id="navigation" class="hidden"></div>
+
+<div id="help">
+  <table>
+    <tr><td class="key">z, ?</td><td>toggle help (this)</td></tr>
+    <tr><td class="key">space, &rarr;</td><td>next slide</td></tr>
+    <tr><td class="key">shift-space, &larr;</td><td>previous slide</td></tr>
+    <tr><td class="key">d</td><td>toggle debug mode</td></tr>
+    <tr><td class="key">## &lt;ret&gt;</td><td>go to slide #</td></tr>
+    <tr><td class="key">c, t</td><td>table of contents (vi)</td></tr>
+    <tr><td class="key">f</td><td>toggle footer</td></tr>
+    <tr><td class="key">r</td><td>reload slides</td></tr>
+    <tr><td class="key">n</td><td>toggle notes</td></tr>
+    <tr><td class="key">p</td><td>run preshow</td></tr>
+  </table>
+</div>
+
+<div class="buttonNav">
+  <input type="submit" onClick="prevStep();" value="prev"/>
+  <input type="submit" onClick="nextStep();" value="next"/>
+</div>
+
+<div id="preso">loading presentation...</div>
+<div id="footer">
+  <span id="slideInfo"></span>
+  <span id="debugInfo"></span>
+  <span id="notesInfo"></span>
+</div>
+
+<div id="slides" class="offscreen" style="display:none;">
+<div class="slide" data-transition="none"><div class="content" ref="intro/01_new_slide/1">
+<h1>Google Analytics</h1>
+
+<p>Tim Mower</p></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="intro/01_new_slide/2">
+<h1>Why Measure?</h1>
+
+<ul>
+<li>Show value of work we have done</li>
+<li>Prove how things are being used</li>
+<li>Quantify improvements made</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="events/01_new_slide/1">
+<h1>Events</h1>
+
+<ul>
+<li>Capture interactions that are not pageviews</li>
+<li>Does not add a pageview</li>
+<li>Can capture more than just user interactions</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="events/01_new_slide/2">
+<h1>Examples</h1>
+
+<ul>
+<li>Ajax galleries</li>
+<li>404 tracking</li>
+<li>Search 0 results</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="events/01_new_slide/3">
+<h1>Tracking code example</h1>
+
+<pre class="sh_javascript"><code>_gaq.push(['_trackEvent',
+ 'Category', 'Action', 
+ 'Label', 'Value', 'noninteraction']);</code></pre>
+
+<ul>
+<li>Category, action, label, value as seen in reports</li>
+<li>noninteraction boolean paramater affects bounce rate</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="events/01_new_slide/4">
+<h1>jQuery event</h1>
+
+<pre class="sh_javascript"><code>&lt;a id="button"&gt;button&lt;/a&gt;
+
+$('button').
+click(
+function() {
+// do something fun
+_gaq.push(['_trackEvent',
+ 'Buttons', 'Clicked']) 
+});</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="social/01_new_slide/1">
+<h1>Social Tracking</h1>
+
+<ul>
+<li>Similar to event tracking</li>
+<li>Tailored towards events on social networks</li>
+<li>Requires events fired by social networks</li>
+<li>Facebook, Twitter, Google Plus all do</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="social/01_new_slide/2">
+<h1>Examples</h1></div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="social/01_new_slide/3">
+<h1>Facebook like</h1>
+
+<pre class="sh_javascript"><code>FB.Event.subscribe('edge.create', 
+function(targetUrl) {
+    _gaq.push(['_trackSocial',
+     'facebook', 'like', targetUrl]);
+});`</code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="customvars/01_new_slide/1">
+<h1>Advanced Segments</h1>
+
+<ul>
+<li>segments allow you to "slice up" your data</li>
+<li>google provide some defaults - search traffic, direct traffic</li>
+<li>can define your own</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content center bullets" ref="customvars/01_new_slide/2">
+<h1>Search v Referral traffic</h1>
+
+<p><img src="./file/customvars/graph.png" alt="Graph"/></p>
+
+<ul>
+<li>Orange line shows search traffic, blue shows referral traffic</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content bullets" ref="customvars/01_new_slide/3">
+<h1>Custom Variables</h1>
+
+<ul>
+<li>Set your own name value pair variables</li>
+<li>Set up segments using these</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="customvars/01_new_slide/4">
+<h1>3 Levels</h1>
+
+<ul>
+<li>Page
+
+<ul>
+<li>track site sections</li>
+</ul>
+</li>
+<li>Visitor
+
+<ul>
+<li>track premium members vs free members</li>
+</ul>
+</li>
+<li>Session
+
+<ul>
+<li>track logged in vs non logged in visitors</li>
+</ul>
+</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="customvars/01_new_slide/5">
+<h1>Slots</h1>
+
+<ul>
+<li>Each custom var must be in a slot</li>
+<li>5 slots only</li>
+<li>This does not limit you to 5 variables, just 5 per request</li>
+<li>google suggest a "slot matrix" to keep track of them</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content smaller" ref="customvars/01_new_slide/6">
+<h1>Example code</h1>
+
+<pre class="sh_javascript"><code>_gaq.push(['_setCustomVar',
+    1, //Slot #1.  Required parameter.
+    'Member Type', // name of custom var. Required parameter.
+    'Premium', // value of custom var. Required parameter.
+    1 // Sets the scope to visitor-level.  Optional.
+]); </code></pre></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="customvars/01_new_slide/7">
+<h1>Notes</h1>
+
+<ul>
+<li>recommended to keep track of all custom vars used</li>
+<li>must call before a page view / event is made for it to count</li>
+<li>very easy to overwrite variables by using the wrong slot, only allowed 5 on a page</li>
+<li>can do a similar things with event tracking</li>
+</ul>
+</div>
+</div><div class="slide" data-transition="none"><div class="content" ref="customvars/01_new_slide/8">
+<h1>Example - Galleries Carousel</h1>
+
+<ul>
+<li>Pageviews down after launching ajax galleries</li>
+<li>Carousel was added - could this be the cause?</li>
+<li>Randomly decide if user gets carousel, set custom var</li>
+</ul>
+
+
+<p><a href="https://www.google.com/analytics/web/#report/visitors-overview/a11429543w24660150p23109399/%3F_.advseg%3Duser770391837%2Cuser1194204392%26_.date00%3D20111115%26_.date01%3D20111128%26overview-graphOptions.primaryConcept%3Danalytics.pageviews/">Report</a></p></div>
+</div><div class="slide" data-transition="none"><div class="content" ref="tldl/01_tldl">
+<h1>tl;dl</h1>
+
+<ul>
+<li>Should consider using events on everything you build</li>
+<li>Social tracking is easy to add</li>
+<li>Custom vars are powerful, dont abuse them</li>
+</ul>
+</div>
+</div></div>
+
+</body>
+</html>
